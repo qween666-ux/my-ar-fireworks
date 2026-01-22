@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WebAR 폭죽 쇼</title>
+    <title>WebAR 정면 폭죽 쇼</title>
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
     <style>
         body { margin: 0; background-color: #000; overflow: hidden; }
@@ -12,7 +12,6 @@
             height: 100vh;
             background-color: #000;
         }
-        /* AR 버튼 스타일 - 눈에 잘 띄게 수정 */
         #ar-button {
             background: linear-gradient(135deg, #ff4757, #ff6b81);
             border-radius: 50px;
@@ -37,26 +36,20 @@
         src="fireworks.glb" 
         ar 
         ar-modes="webxr scene-viewer quick-look" 
-        ar-placement="floor"
+        ar-placement="wall"
         camera-controls 
         autoplay 
         loop
-        scale="5 5 5"
+        scale="3 3 3"
+        camera-target="0m 1.5m -1m"
         shadow-intensity="1" 
-        alt="화려한 폭죽 애니메이션">
+        alt="정면 폭죽 쇼">
         
         <button slot="ar-button" id="ar-button">
-            🚀 AR 모드 시작 (클릭)
+            🚀 정면에서 폭죽 터뜨리기
         </button>
 
     </model-viewer>
 
-    <script>
-        // 모델이 로드되었는지 확인하는 로그 (개발자 도구용)
-        const modelViewer = document.querySelector("model-viewer");
-        modelViewer.addEventListener("load", () => {
-            console.log("폭죽 모델 로드 완료!");
-        });
-    </script>
 </body>
 </html>
